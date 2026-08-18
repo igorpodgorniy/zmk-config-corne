@@ -10,14 +10,14 @@ include:
   # Прошить этот файл, подключиться: screen /dev/tty.usbmodem* 115200
   - board: nice_nano@2.0.0
     shield: corne_left
-    cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
+    snippet: zmk-usb-logging
     artifact-name: corne_left_usb_logging
 
   # [ДИАГНОСТИКА 2] Левая половина — отключённый NVS (настройки не читаются из памяти)
   # Если эта прошивка заработает — проблема точно в битом NVS
   - board: nice_nano@2.0.0
     shield: corne_left
-    cmake-args: -DCONFIG_SETTINGS_NONE=y -DCONFIG_ZMK_BLE=n
+    cmake-args: -DCONFIG_SETTINGS_NONE=y
     artifact-name: corne_left_no_nvs
 
   # Сброс настроек (NVS reset)
